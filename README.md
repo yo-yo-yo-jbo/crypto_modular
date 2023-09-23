@@ -40,5 +40,9 @@ Just like we said substruction is addition of the additive inverse of a number, 
 The problem is that we can't find such an inverse for every number - `0` cannot have such an inverse (just like in real numbers) since `0` times everything is still `0` so we never get to `1`.  
 Besides `0` we have the `zero divisors` I mentioned earlier - it's trivial to prove that all numbers that are not `zero divisors` have a multipicative inverse.  
 Finding that inverse is a different story. Naively, we could always check every nunmber, but if the modulus is too big then finding it will take a very long time (remember that a number `n` takes `lg n` bits to represent it, so brute-forcing all numbers is an *exponential operation* and therefore - expansive).  
+To see an example: `5*6 (mod 29) = 30 (mod 29) = 1 (mod 29)`, so we say `6` is the multipicative inverse of `5`, and also, for example, `2/5 (mod 30) = 2*6 (mod 30) = 12 (mod 30)`.
+Well, it turns out we could use the [Euclidean Algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) to find that number, very efficiently!
 
-
+## The Euclidean Algorithm
+The Euclidean Algorithm generally finds the `Greatest Common Divisor (GCD)` of two given numbers, and does so very efficiently.  
+The basic idea is that 
