@@ -45,11 +45,16 @@ Well, it turns out we could use the [Euclidean Algorithm](https://en.wikipedia.o
 
 ## The Euclidean Algorithm
 The Euclidean Algorithm generally finds the `Greatest Common Divisor (GCD)` of two given numbers, and does so very efficiently.  
+Naively we can calculate the GCD by taking the lowest prime powers of each number, but prime factorization is a computationally difficult problem (in terms of complexity). Therefore, we need a different trick.
 The basic idea is to see how many times the smallest number "fits" in the larger number but take the remainder only, and then swap roles.
 Let's take the numbers `5` and `29` for example:
 1. To calculate `gcd(29, 5)` we see that `29 = 5*5 + 4`, so `4` is the remainder. Therefore, `gcd(29, 5)` = `gcd(5, 4)`.
 2. To calculate `gcd(5, 4)` we see that `5 = 4*1 + 1`, so `1` is the remainder. Therefore, `gcd(5, 4)` = `gcd(4, 1)`.
 3. To calculate `gcd(4, 1)` we see that `4 = 1*4 + 0`, so `0` is the remainder. Since we got to a remainder of `0`, the final result is `1`.
 Therefore, `gcd(29, 5) = 1`.
+
+The reason why I showed the entire computation is that we can clearly see that the GCD can be expressed as a linear combination of the inputs!
+For example, `4*29-23*5 = 1` (this can be derived from the 3 steps I showed earlier). 
+
 
 
