@@ -1,4 +1,4 @@
-# Introduction to cryptography - modular arithmetics
+# Introduction to cryptography - basic modular arithmetics
 In the last blogpost we introduced cryptography and dicsussed `Monoalphabetic Substitution Ciphers`. We could already see operations that are *cyclic*.  
 For example, in Caesar Cipher we *rotated* the letters by 3, which we could imagine as a "circle" with the 26 letters being rotated.  
 That kind of rotation and arithmetic operations on it is called `Modular arithmetics`, and while the name sounds scary - some of it is quite straightforward.
@@ -108,3 +108,19 @@ pow(5, -1, 29)
 ```
 
 ## Groups
+If the modular base `n` is prime, we usually mark it with a `p`. Apparently, the set of numbers modulu a prime `p` is quite special in terms of mathematics - it's a `Group`.  
+Groups are a fascinating mathematical objects that are learned in Algebra (`Group Theory`). Generally, you can think of groups as some sort of [Operator Overloading](https://en.wikipedia.org/wiki/Operator_overloading) for multipication. A group contains:
+1. A `set` of elements (can be either finite or an infinite set).
+2. An `operation` we usually mark with a `*`. That's the operator overloading I was mentioning.
+3. The elements of the set are *closed* under the operation, which means the result of the operation is also contained in the set of elements.
+4. There exists an element in the set we mark as `e` or `1` such that `a*e = e*a = a` for all elements `a` in the set.
+5. For every element `a` in the set there exists an inverse `b` such that `a*b = e`.
+
+Group theory is a well-studied field, and luckily - all the elements `mod p` besides `0` form a finite `Group`!  
+Not only that, but the Group is `Abelian`, which is a fancy word of saying `a*b = b*a` always. Note this is not necessarily true for all Groups.  
+Also note that even if `n` is not prime, we can always take all the elements that are `co-prime` to `n` and they will also form a Group!
+This fact has many implications that we will be using later for things like `RSA` or `Diffie-Hellman`.  
+
+## Summary
+
+
