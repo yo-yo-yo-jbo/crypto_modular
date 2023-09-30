@@ -22,6 +22,8 @@ int main()
 
 This prints out zero since bytes (`unsigned char`) work `mod 256`.
 
+Mathematically we like to say that `a = b (mod n)` if `n` *divides* `a-b`. You can still, however, interpret it that the remainder of `a` and `b` from `n` are the same - those things are equivalent.
+
 ### Addition and multipication
 Interestingly, addition and muiltipication work "as expected" - for example, you can multiple two numbers within the range and take the remainder: `5 * 6 (mod 12) = 30 (mod 12) = 6 (mod 12)`.  
 Another example is `6*4 (mod 12) = 24 (mod 12) = 0 (mod 12)`. That's strange - we multiplied two non-zero numbers and got a zero!  
@@ -120,6 +122,8 @@ Group theory is a well-studied field, and luckily - all the elements `mod p` bes
 Not only that, but the Group is `Abelian`, which is a fancy word of saying `a*b = b*a` always. Note this is not necessarily true for all Groups.  
 Also note that even if `n` is not prime, we can always take all the elements that are `co-prime` to `n` and they will also form a Group!
 This fact has many implications that we will be using later for things like `RSA` or `Diffie-Hellman`.  
+
+An interesting note - not all Groups look and "feel" like multipication - for example, the set of numbers `{0,1,2,...,n-1}` (yes, including `0` and for *every* `n`) are an `Abelian Group` with the *modular addition* as the operation and `e = 0`. For those we might mark the operation as a `+` sign, but the axioms I've presented still hold.
 
 ## Summary
 This blogpost was more mathematical than "practical", but it's quite an important preparation to modern cryptography.  
