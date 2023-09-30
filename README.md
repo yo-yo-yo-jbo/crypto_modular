@@ -66,7 +66,7 @@ def egcd(a, b):
     """
 
     # Base case
-    if a == 0 :
+    if a == 0:
         return (b, 0, 1)
 
     # Recursively calculate
