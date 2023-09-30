@@ -122,5 +122,9 @@ Also note that even if `n` is not prime, we can always take all the elements tha
 This fact has many implications that we will be using later for things like `RSA` or `Diffie-Hellman`.  
 
 ## Summary
+This blogpost was more mathematical than "practical", but it's quite an important preparation to modern cryptography.  
+In the next blogpost I will get back to substitution ciphers, but from this point on I will be using some of the mathematical terminology and concepts I've introduced in this blogpost, so make sure to understand it well.
 
+Stay tuned,  
+Jonathan Bar Or
 
