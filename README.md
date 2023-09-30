@@ -54,7 +54,7 @@ Let's take the numbers `5` and `29` for example:
 Therefore, `gcd(29, 5) = 1`.
 
 The reason why I showed the entire computation is that we can clearly see that the GCD can be expressed as a linear combination of the inputs!
-For example, `4*29-23*5 = 1` (this can be derived from the 3 steps I showed earlier). 
+For example, `(-1)*29+6*5 = 1` (this can be derived from the 3 steps I showed earlier). 
 We can implement the algorithm recursively:
 
 ```python
@@ -75,4 +75,14 @@ def egcd(a, b):
     return gcd, coeff_a, coeff_b
 ```
 
+The algorithm is very efficient (logarithmic complexity) and is also extremely useful for modular arithmetic.  
+Why? Well, if you get a linear combination of `a` and `b`, you can easily get the modular inverse of `b (mod a)`:
+
+```
+ax + by = 1
+ax + by = 1 (mod a)
+by = 1 (mod a)
+```
+
+This means that `y` (the coefficient of `b`) is the modular inverse! Remember that `ax (mod a)` is always `0`.
 
