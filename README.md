@@ -85,4 +85,26 @@ by = 1 (mod a)
 ```
 
 This means that `y` (the coefficient of `b`) is the modular inverse! Remember that `ax (mod a)` is always `0`.
+Therefore, we can compute the modular inverse (as long as the numbers have a GCD of `1`, or in other words - if they are `co-prime`):
 
+```python
+def modinv(a, n):
+    """
+        Calculates the modular inverse of a (mod n).
+    """
+
+    # Use the Extended Euclidean algorithm to get the modular inverse
+    gcd, x, y = egcd(a, n)
+    assert gcd == 1, Exception(f'Numbers {a} and {n} are not co-prime')
+    return x % n
+```
+
+Indeed we get the modular inverse of `5` is `6`, since `5*6 = 30 = 1 (mod 29)`.
+Since we know how to get a modular inverse, we know how to divide!
+Note: in Python3 you can also get the modular inverse with the `pow` function:
+
+```python
+pow(5, -1, 29)
+```
+
+## Groups
