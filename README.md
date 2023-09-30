@@ -55,6 +55,24 @@ Therefore, `gcd(29, 5) = 1`.
 
 The reason why I showed the entire computation is that we can clearly see that the GCD can be expressed as a linear combination of the inputs!
 For example, `4*29-23*5 = 1` (this can be derived from the 3 steps I showed earlier). 
+We can implement the algorithm recursively:
 
+```python
+def egcd(a, b):
+    """
+        Extended Euclidean algorithm - returns the gcd and two coefficients to get a linear combination of inputs.
+    """
+
+    # Base case
+    if a == 0 :
+        return (b, 0, 1)
+
+    # Recursively calculate
+    gcd, old_coeff_a, old_coeff_b = egcd(b % a, a)
+    coeff_a = old_coeff_b - (b // a) * old_coeff_a
+    coeff_b = old_coeff_a
+     
+    return gcd, coeff_a, coeff_b
+```
 
 
